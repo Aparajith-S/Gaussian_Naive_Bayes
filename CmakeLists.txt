@@ -1,0 +1,16 @@
+project(GaussianNaiveBayesClassifier)
+
+cmake_minimum_required (VERSION 2.5)
+
+add_definitions(-std=c++11)
+
+set(CXX_FLAGS "-Wall")
+set(CMAKE_CXX_FLAGS "${CXX_FLAGS}")
+
+set(sources src/main.cpp src/classifier.h src/classifier.cpp)
+add_executable(GNBClassifier ${sources})
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/data/train_states.txt ${CMAKE_CURRENT_BINARY_DIR}/data/train_states.txt COPYONLY)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/data/train_labels.txt ${CMAKE_CURRENT_BINARY_DIR}/data/train_labels.txt  COPYONLY)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/data/test_states.txt ${CMAKE_CURRENT_BINARY_DIR}/data/test_states.txt COPYONLY)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/data/test_labels.txt ${CMAKE_CURRENT_BINARY_DIR}/data/test_labels.txt COPYONLY)
+	 
